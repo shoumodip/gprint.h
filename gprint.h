@@ -54,9 +54,14 @@
 #define GPRINT_LIST1(a, x, peek, ...)                                                              \
     _Generic((x), GPRINT_TABLE)(a, x) GPRINT_LIST_NEXT(peek, GPRINT_LIST0)(a, peek, __VA_ARGS__)
 
-#define fprint(f, ...) GPRINT_EVAL(GPRINT_LIST1(f, __VA_ARGS__, ()()(), ()()(), ()()(), 0))
-#define eprint(...)    fprint(stderr, __VA_ARGS__)
-#define print(...)     fprint(stdout, __VA_ARGS__)
+#define fprint(f, ...)   GPRINT_EVAL(GPRINT_LIST1(f, __VA_ARGS__, ()()(), ()()(), ()()(), 0))
+#define fprintln(f, ...) fprint(f, __VA_ARGS__, (char) '\n')
+
+#define eprint(...)   fprint(stderr, __VA_ARGS__)
+#define eprintln(...) eprint(__VA_ARGS__, (char) '\n')
+
+#define print(...)   fprint(stdout, __VA_ARGS__)
+#define println(...) print(__VA_ARGS__, (char) '\n')
 
 void gprint_char(FILE *f, char x);
 void gprint_short(FILE *f, short x);

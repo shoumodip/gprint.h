@@ -30,13 +30,22 @@ $ ./print
 69 and 420. Nice!
 ```
 
+### `println(...)`
+Print the arguments into standard output with a newline.
+
 ### `eprint(...)`
 Print the arguments into standard error.
+
+### `eprintln(...)`
+Print the arguments into standard error with a newline.
 
 ### `fprint(FILE *stream, ...)`
 Print the arguments into `stream`.
 
 **NOTE:** The argument `stream` will be evaluated multiple times.
+
+### `fprintln(FILE *stream, ...)`
+Print the arguments into `stream` with a newline.
 
 ### `GPRINT_TABLE_CUSTOM`
 Implement print functions for custom types.
