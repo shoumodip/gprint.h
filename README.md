@@ -70,8 +70,8 @@ void file_print_vec3(FILE *f, Vec3 v) {
 // NOTE: DO NOT use comma/semicolon(s) to separate the items of this list.
 //       Just write the entries one after the other.
 //
-#define GPRINT_TABLE_CUSTOM                                                                        \
-    GPRINT_FUNC(Vec2, file_print_vec2)                                                                 \
+#define GPRINT_TABLE_CUSTOM                                                    \
+    GPRINT_FUNC(Vec2, file_print_vec2)                                         \
     GPRINT_FUNC(Vec3, file_print_vec3)
 
 #define GPRINT_IMPLEMENTATION
